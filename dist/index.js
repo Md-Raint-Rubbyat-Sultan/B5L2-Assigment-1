@@ -88,3 +88,60 @@ function processValue(value) {
 // Example as given
 processValue("hello"); // Output: 5
 processValue(10); // Output: 20
+function getMostExpensiveProduct(products) {
+    if (products.length === 0)
+        return null;
+    let heighestPrice = products[0];
+    products.forEach((product) => {
+        if (product.price > heighestPrice.price)
+            heighestPrice = product;
+    });
+    console.log(heighestPrice);
+    return heighestPrice;
+}
+// Example as given
+const products = [
+    { name: "Pen", price: 10 },
+    { name: "Notebook", price: 25 },
+    { name: "Bag", price: 50 },
+];
+getMostExpensiveProduct(products);
+// Output: { name: "Bag", price: 50 }
+// Problem 7
+var Day;
+(function (Day) {
+    Day[Day["Monday"] = 0] = "Monday";
+    Day[Day["Tuesday"] = 1] = "Tuesday";
+    Day[Day["Wednesday"] = 2] = "Wednesday";
+    Day[Day["Thursday"] = 3] = "Thursday";
+    Day[Day["Friday"] = 4] = "Friday";
+    Day[Day["Saturday"] = 5] = "Saturday";
+    Day[Day["Sunday"] = 6] = "Sunday";
+})(Day || (Day = {}));
+function getDayType(day) {
+    if (day === Day.Saturday) {
+        console.log("Weekend");
+        return "Weekend";
+    }
+    if (day === Day.Sunday) {
+        console.log("Weekend");
+        return "Weekend";
+    }
+    console.log("Weekday");
+    return "Weekday";
+}
+// Example as given
+getDayType(Day.Monday); // Output: "Weekday"
+getDayType(Day.Sunday); // Output: "Weekend"
+// Problem 8
+async function squareAsync(n) {
+    const res = await new Promise((resolve, reject) => {
+        if (n < 0)
+            reject(new Error("Negative number not allowed"));
+        setTimeout(() => resolve(Math.pow(n, 2)), 1000);
+    });
+    return res;
+}
+// Example as given
+squareAsync(4).then(console.log); // Output after 1s: 16
+squareAsync(-3).catch(console.error); // Output: Error: Negative number not allowed

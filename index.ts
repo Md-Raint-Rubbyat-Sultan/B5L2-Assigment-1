@@ -95,3 +95,74 @@ function processValue(value: string | number): number {
 // Example as given
 processValue("hello"); // Output: 5
 processValue(10); // Output: 20
+
+// Problem 6
+interface Product {
+  name: string;
+  price: number;
+}
+
+function getMostExpensiveProduct(products: Product[]): Product | null {
+  if (products.length === 0) return null;
+
+  let heighestPrice: Product = products[0];
+  products.forEach((product) => {
+    if (product.price > heighestPrice.price) heighestPrice = product;
+  });
+
+  console.log(heighestPrice);
+  return heighestPrice;
+}
+
+// Example as given
+const products: Array<Product> = [
+  { name: "Pen", price: 10 },
+  { name: "Notebook", price: 25 },
+  { name: "Bag", price: 50 },
+];
+
+getMostExpensiveProduct(products);
+// Output: { name: "Bag", price: 50 }
+
+// Problem 7
+enum Day {
+  Monday,
+  Tuesday,
+  Wednesday,
+  Thursday,
+  Friday,
+  Saturday,
+  Sunday,
+}
+
+function getDayType(day: Day): string {
+  if (day === Day.Saturday) {
+    console.log("Weekend");
+    return "Weekend";
+  }
+  if (day === Day.Sunday) {
+    console.log("Weekend");
+    return "Weekend";
+  }
+  console.log("Weekday");
+  return "Weekday";
+}
+
+// Example as given
+getDayType(Day.Monday); // Output: "Weekday"
+getDayType(Day.Sunday); // Output: "Weekend"
+
+// Problem 8
+async function squareAsync(n: number): Promise<number> {
+  const res: number = await new Promise((resolve, reject) => {
+    if (n < 0) reject(new Error("Negative number not allowed"));
+
+    setTimeout(() => resolve(Math.pow(n, 2)), 1000);
+  });
+
+  return res;
+}
+
+// Example as given
+squareAsync(4).then(console.log); // Output after 1s: 16
+squareAsync(-3).catch(console.error); // Output: Error: Negative number not allowed
