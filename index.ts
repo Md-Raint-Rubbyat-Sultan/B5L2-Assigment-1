@@ -48,3 +48,33 @@ function concatenateArrays<T>(...arrays: T[][]): T[] {
 // Example as given
 concatenateArrays(["a", "b"], ["c"]); // Output: ["a", "b", "c"]
 concatenateArrays([1, 2], [3, 4], [5]); // Output: [1, 2, 3, 4, 5]
+
+// Problem 4
+class Vehicle {
+  constructor(private _make: string, private year: number) {}
+
+  getInfo(): string {
+    console.log(`Make: ${this._make}, Year: ${this.year}`);
+    return `Make: ${this._make}, Year: ${this.year}`;
+  }
+}
+
+class Car extends Vehicle {
+  constructor(
+    protected name: string,
+    protected createdAt: number,
+    private model: string
+  ) {
+    super(name, createdAt);
+  }
+
+  getModel(): string {
+    console.log(`Model: ${this.model}`);
+    return `Model: ${this.model}`;
+  }
+}
+
+// Example as given
+const myCar = new Car("Toyota", 2020, "Corolla");
+myCar.getInfo(); // Output: "Make: Toyota, Year: 2020"
+myCar.getModel(); // Output: "Model: Corolla"

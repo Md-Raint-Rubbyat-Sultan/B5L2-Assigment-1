@@ -40,3 +40,35 @@ function concatenateArrays(...arrays) {
 // Example as given
 concatenateArrays(["a", "b"], ["c"]); // Output: ["a", "b", "c"]
 concatenateArrays([1, 2], [3, 4], [5]); // Output: [1, 2, 3, 4, 5]
+// Problem 4
+class Vehicle {
+    _make;
+    year;
+    constructor(_make, year) {
+        this._make = _make;
+        this.year = year;
+    }
+    getInfo() {
+        console.log(`Make: ${this._make}, Year: ${this.year}`);
+        return `Make: ${this._make}, Year: ${this.year}`;
+    }
+}
+class Car extends Vehicle {
+    name;
+    createdAt;
+    model;
+    constructor(name, createdAt, model) {
+        super(name, createdAt);
+        this.name = name;
+        this.createdAt = createdAt;
+        this.model = model;
+    }
+    getModel() {
+        console.log(`Model: ${this.model}`);
+        return `Model: ${this.model}`;
+    }
+}
+// Example as given
+const myCar = new Car("Toyota", 2020, "Corolla");
+myCar.getInfo(); // Output: "Make: Toyota, Year: 2020"
+myCar.getModel(); // Output: "Model: Corolla"
