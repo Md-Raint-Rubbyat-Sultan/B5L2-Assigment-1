@@ -1,4 +1,5 @@
 "use strict";
+// Problem 1
 function formatString(input, toUpper) {
     if (toUpper === true) {
         console.log(input.toUpperCase());
@@ -11,6 +12,32 @@ function formatString(input, toUpper) {
     console.log(input.toUpperCase());
     return input.toUpperCase();
 }
+// Example as given
 formatString("Hello"); // Output: "HELLO"
 formatString("Hello", true); // Output: "HELLO"
 formatString("Hello", false); // Output: "hello"
+// Problem 2
+function filterByRating(items) {
+    const heigherThan4 = items.filter((item) => item.rating >= 4);
+    console.log(heigherThan4);
+    return heigherThan4;
+}
+// Example as given
+const books = [
+    { title: "Book A", rating: 4.5 },
+    { title: "Book B", rating: 3.2 },
+    { title: "Book C", rating: 5.0 },
+];
+filterByRating(books);
+// Output: [ { title: "Book A", rating: 4.5 }, { title: "Book C", rating: 5.0 } ]
+// Problem 3
+function concatenateArrays(...arrays) {
+    let newArr = [];
+    arrays.forEach((arr) => {
+        newArr = [...newArr, ...arr];
+    });
+    console.log(newArr);
+}
+// Example as given
+concatenateArrays(["a", "b"], ["c"]); // Output: ["a", "b", "c"]
+concatenateArrays([1, 2], [3, 4], [5]); // Output: [1, 2, 3, 4, 5]
