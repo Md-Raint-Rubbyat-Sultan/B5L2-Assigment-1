@@ -39,10 +39,8 @@ filterByRating(books);
 
 // Problem 3
 function concatenateArrays<T>(...arrays: T[][]): T[] {
-  let newArr: Array<any> = [];
-  arrays.forEach((arr) => {
-    newArr = [...newArr, ...arr];
-  });
+  const newArr: Array<T> = [];
+  arrays.forEach((arr) => newArr.push(...arr));
   console.log(newArr);
   return newArr;
 }

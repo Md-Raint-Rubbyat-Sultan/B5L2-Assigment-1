@@ -32,11 +32,10 @@ filterByRating(books);
 // Output: [ { title: "Book A", rating: 4.5 }, { title: "Book C", rating: 5.0 } ]
 // Problem 3
 function concatenateArrays(...arrays) {
-    let newArr = [];
-    arrays.forEach((arr) => {
-        newArr = [...newArr, ...arr];
-    });
+    const newArr = [];
+    arrays.forEach((arr) => newArr.push(...arr));
     console.log(newArr);
+    return newArr;
 }
 // Example as given
 concatenateArrays(["a", "b"], ["c"]); // Output: ["a", "b", "c"]
