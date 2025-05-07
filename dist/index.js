@@ -72,3 +72,19 @@ class Car extends Vehicle {
 const myCar = new Car("Toyota", 2020, "Corolla");
 myCar.getInfo(); // Output: "Make: Toyota, Year: 2020"
 myCar.getModel(); // Output: "Model: Corolla"
+// Problem 5
+function processValue(value) {
+    let outVal = 0;
+    if (typeof value === "string") {
+        console.log(value.length);
+        outVal = value.length;
+    }
+    else if (typeof value === "number") {
+        console.log(value * 2);
+        outVal = value * 2;
+    }
+    return outVal;
+}
+// Example as given
+processValue("hello"); // Output: 5
+processValue(10); // Output: 20
